@@ -1,0 +1,45 @@
+table {
+    display: inline-block;
+    padding-right: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    border-top: double;
+    border-bottom: double;
+    border-right: double;
+    border-left: double;
+    border-color: #FF6699;
+    border-collapse: collapse;
+    border-style: groove;
+    border-spacing: inherit;
+}
+tr:hover {
+    background-color:yellow;
+}
+
+td {
+    height: 20px;
+    width: 20px;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body {
+    background:#88BBBB;
+    text-align: center;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.25em;
+    letter-spacing: 4px;
+}
+form {
+    letter-spacing: -.5px;
+    padding:5px;
+    font-style: normal;
+}
+h1 {
+    color:#FF6699;
+    text-decoration: underline;
+}
