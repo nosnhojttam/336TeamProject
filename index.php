@@ -83,7 +83,7 @@
         
         echo "<table border=1>";
         echo "<tr>";
-            echo "<th>!</th>";
+            echo "<th>Check</th>";
             echo "<th>Item Name</th>";
             echo "<th>Price</th>";
             echo "<th>Availability</th>";
