@@ -48,9 +48,6 @@
     </head>
     
     <body>
-        <form>
-            <input type="submit" value="Reserve" />
-        </form>
     </body>
 </html>
 
