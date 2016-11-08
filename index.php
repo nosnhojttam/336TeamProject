@@ -158,6 +158,9 @@
            <input type="submit" value="Continue">
          </form>  
          
+         <a href='https://docs.google.com/a/csumb.edu/document/d/1l2r5eWzr5vs3tS1gzwnnK9KBTXNUy4p__lZhcisA0fE/edit?usp=sharing' target='_blank'>
+             Link to our Google Doc!
+         </a>
         
     </body>
 </html>
