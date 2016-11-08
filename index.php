@@ -19,19 +19,19 @@
                 
                 if (!empty($_GET['itemName']))
                     {
-                   $sql = $sql . " AND item.itemName LIKE  :itemName";
+                   $sql = $sql . " AND item.itemName LIKE :itemName";
                    $namedParameters[':itemName'] = "%" . $_GET['itemName'] . "%";
                     }
                     if(isset($_GET['inStore']))
                      {
                     $sql = $sql . " AND item.availability = :availability";
-                    $namedParameters[':availability'] = "inStore";
+                    $namedParameters[':availability'] = "in Store";
                     }
                 
                  if(isset($_GET['online']))
                     {
                     $sql = $sql . " AND item.availability = :availability";
-                    $namedParameters[':availability'] = "online";
+                    $namedParameters[':availability'] = "Online";
                     }
                 
                 if(isset($_GET['mens']))
@@ -42,7 +42,7 @@
                 
                  if(isset($_GET['womens']))
                     {
-                    $sql = $sql . " AND deptdeptId = :deptId";
+                    $sql = $sql . " AND dept.deptId = :deptId";
                     $namedParameters[':deptId'] = "2";
                     }
                 
@@ -53,7 +53,7 @@
                     }
             }
         
-            if(isset($_GET['sort']))
+            /*if(isset($_GET['sort']))
             {
                 $sortN = $_GET['sort'];
                 
@@ -72,7 +72,7 @@
             if ($sortN1='item')
             {
                 $sql=$sql . 'ORDER BY itemName';
-            }
+            }*/
                 
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($namedParameters);
@@ -119,7 +119,7 @@
                <input type= "checkbox" name= "inStore" id ="inStore" value="inStore">
              <label for="inStore" > In Store</label>
              
-             <input type= "checkbox" name= "available" id ="available" value="available">
+             <input type= "checkbox" name= "online" id ="online" value="online">
              <label for="online" > Online</label>
              
              <input type= "checkbox" name= "kids" id ="kids" value="kids">
