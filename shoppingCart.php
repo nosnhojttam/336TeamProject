@@ -9,12 +9,13 @@
         $_SESSION['cart'] = array();  //initialize session variable
     }
         
-    $cart = $_GET['cart'];
-    
-    foreach($cart as $element)
-    {   
-        if(!in_array($element, $_SESSION['cart'])){
-            $_SESSION['cart'][] = $element;
+    if(isset($_GET['cart'])){
+        $cart = $_GET['cart'];
+        foreach($cart as $element)
+        {   
+            if(!in_array($element, $_SESSION['cart'])){
+                $_SESSION['cart'][] = $element;
+            }
         }
     }
     
