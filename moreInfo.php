@@ -49,7 +49,7 @@
 <html>
     <head>
         <title>Clothing Store</title>
-        <link rel="stylesheet" href="https://cst336-john4722.c9users.io/team_project/336TeamProject/css/styles.css" type="text/css" />
+        <link rel="stylesheet" href="./css/styles.css" type="text/css" />
     </head>
     
     <body>
