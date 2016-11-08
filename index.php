@@ -141,10 +141,10 @@
              <label for="womens" > Women's</label>
              
              <input type= "checkbox" name= "sort" id ="sort" value="sort">
-             <label for="sort" > Order by Price</label>
+             <label for="sort" > Order by Price (Descending)</label>
              
               <input type= "checkbox" name= "sort1" id ="sort1" value="sort1">
-             <label for="sort1" > Order by Name</label>
+             <label for="sort1" > Order by Name (Ascending)</label>
              
              <input type="submit" name ="submit" value="Search"/></td>
         </form>
@@ -160,6 +160,10 @@
          
          <a href='https://docs.google.com/a/csumb.edu/document/d/1l2r5eWzr5vs3tS1gzwnnK9KBTXNUy4p__lZhcisA0fE/edit?usp=sharing' target='_blank'>
              Link to our Google Doc!
+         </a>
+         <br>
+         <a href='https://trello.com/b/gGf2Mu0S/internet-programing-project' target='_blank'>
+             Link to our Trello board!
          </a>
         
     </body>
