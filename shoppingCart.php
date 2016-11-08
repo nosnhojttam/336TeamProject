@@ -11,7 +11,7 @@
         
     $cart = $_GET['cart'];
     
-    foreach($cart as $element )
+    foreach($cart as $element)
     {   
         if(!in_array($element, $_SESSION['cart'])){
             $_SESSION['cart'][] = $element;
@@ -40,7 +40,19 @@
     
 ?>
 
-<br />
-<form>
-    <input type="submit" value="Reserve" />
-</form>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team Project</title>
+        <link rel="stylesheet" href="https://cst336-john4722.c9users.io/team_project/336TeamProject/css/styles.css" type="text/css" />
+    </head>
+    
+    <body>
+        <form>
+            <input type="submit" value="Reserve" />
+        </form>
+    </body>
+</html>
+
+
+
