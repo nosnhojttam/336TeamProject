@@ -53,26 +53,29 @@
                     }
             }
         
-            /*if(isset($_GET['sort']))
+            if(isset($_GET['sort']))
             {
                 $sortN = $_GET['sort'];
                 
                 
                 if($sortN = 'pricehigh')
                     {
-                    $sql= $sql . 'ORDER BY price DESC';
+                    $sql= $sql . " ORDER BY item.price DESC";
                     }
             }
                     
             if(isset($_GET['sort1']))
             {
-            $sortN1 = $_GET['sort1'];
+                $sortN1 = $_GET['sort1'];
+                
+                if ($sortN1='item')
+                {
+                    $sql=$sql . " ORDER BY item.itemName";
+                }
+                
             }
             
-            if ($sortN1='item')
-            {
-                $sql=$sql . 'ORDER BY itemName';
-            }*/
+            
                 
         $stmt = $dbConn->prepare($sql);
         $stmt->execute($namedParameters);
@@ -134,7 +137,7 @@
              <input type= "checkbox" name= "sort" id ="sort" value="sort">
              <label for="sort" > Order by Price</label>
              
-              <input type= "checkbox" name= "sort" id ="sort" value="sort">
+              <input type= "checkbox" name= "sort1" id ="sort1" value="sort1">
              <label for="sort1" > Order by Name</label>
              
              <input type="submit" name ="submit" value="Search"/></td>
