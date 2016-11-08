@@ -18,7 +18,7 @@
         }
     }
     
-    echo "<h2>Shopping Cart </h2>";
+     echo "<h1>Shopping Cart </h1>";
     
     $sql = "SELECT *
             FROM item
