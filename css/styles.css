@@ -40,8 +40,9 @@ form {
     font-style: normal;
 }
 h1 {
-    color:#FF6699;
-    text-decoration: underline;
+    color: #d2b48c;
+text-shadow: 0 3px 0 #999999, 0 15px 5px rgba(0,0,0,0.1), 10px 20px 5px rgba(0,0,0,0.05), -10px 20px 5px rgba(0,0,0,0.05);
+    
 }
 
  input {
@@ -55,4 +56,13 @@ h1 {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
 }
