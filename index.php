@@ -83,11 +83,11 @@
         
         echo "<table border=1>";
         echo "<tr>";
-            echo "<td>!</td>";
-            echo "<td>Item Name</td>";
-            echo "<td>Price</td>";
-            echo "<td>Availability</td>";
-            echo "<td>Department</td>";
+            echo "<th>!</th>";
+            echo "<th>Item Name</th>";
+            echo "<th>Price</th>";
+            echo "<th>Availability</th>";
+            echo "<th>Department</th>";
             echo "</tr>";
         foreach($records as $record){
             echo "<tr>";
@@ -118,7 +118,7 @@
         <h1> Technology Center: Checkout System </h1>
     
         <form>
-            <h1>put filtering/sorting here</h1>
+            <h1>Filter your search:</h1>
                <input type= "checkbox" name= "inStore" id ="inStore" value="inStore">
              <label for="inStore" > In Store</label>
              
