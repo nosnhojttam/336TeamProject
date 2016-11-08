@@ -88,6 +88,7 @@
             echo "<th>Price</th>";
             echo "<th>Availability</th>";
             echo "<th>Department</th>";
+            echo "<th>More Info</th>";
             echo "</tr>";
         foreach($records as $record){
             echo "<tr>";
@@ -96,6 +97,11 @@
             echo "<td>" . "$" . $record['price'] . "</td>";
             echo "<td>" . $record['availability'] . "</td>";
             echo "<td>" . $record['deptName'] . "</td>";
+            echo "<td>";
+            //echo "<form action='moreInfo.php' method='get' target='_blank'>";
+            //echo "<input type='submit' value='More Info' name='" . $record['itemId'] . "'></form>";
+            echo "<a href='./moreInfo.php?itemId=" . $record['itemId'] . "' target='_blank'>More Info";
+            echo "</td>";
             echo "</tr>";
         }
         echo "</table>";
