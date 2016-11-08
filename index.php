@@ -10,10 +10,72 @@
     
         $sql = "SELECT * FROM `item`
                 INNER JOIN dept
-                ON item.deptId = dept.deptID "; //getting all records
+                ON item.deptId = dept.deptID 
+                WHERE 1 "; //getting all records
+                
+        if (isset($_GET['submit']))
+            {
+                $namedParameters = array();
+                
+                if (!empty($_GET['itemName']))
+                    {
+                   $sql = $sql . " AND item.itemName LIKE  :itemName";
+                   $namedParameters[':itemName'] = "%" . $_GET['itemName'] . "%";
+                    }
+                    if(isset($_GET['inStore']))
+                     {
+                    $sql = $sql . " AND item.availability = :availability";
+                    $namedParameters[':availability'] = "inStore";
+                    }
+                
+                 if(isset($_GET['online']))
+                    {
+                    $sql = $sql . " AND item.availability = :availability";
+                    $namedParameters[':availability'] = "online";
+                    }
+                
+                if(isset($_GET['mens']))
+                    {
+                    $sql = $sql . " AND dept.deptId = :deptId";
+                    $namedParameters[':deptId'] = "1";
+                    }
+                
+                 if(isset($_GET['womens']))
+                    {
+                    $sql = $sql . " AND deptdeptId = :deptId";
+                    $namedParameters[':deptId'] = "2";
+                    }
+                
+                if(isset($_GET['kids']))
+                    {
+                    $sql = $sql . " AND dept.deptId = :deptId";
+                    $namedParameters[':deptId'] = "3";
+                    }
+            }
+        
+            if(isset($_GET['sort']))
+            {
+                $sortN = $_GET['sort'];
+                
+                
+                if($sortN = 'pricehigh')
+                    {
+                    $sql= $sql . 'ORDER BY price DESC';
+                    }
+            }
+                    
+            if(isset($_GET['sort1']))
+            {
+            $sortN1 = $_GET['sort1'];
+            }
+            
+            if ($sortN1='item')
+            {
+                $sql=$sql . 'ORDER BY itemName';
+            }
                 
         $stmt = $dbConn->prepare($sql);
-        $stmt->execute();
+        $stmt->execute($namedParameters);
         $records = $stmt->fetchALL(PDO::FETCH_ASSOC);
         
         echo "<table border=1>";
@@ -35,66 +97,7 @@
         }
         echo "</table>";
         
-           if (isset($_GET['submit']))
-            {
-                $namedParameters = array();
-                
-                if (!empty($_GET['itemName']))
-                    {
-                   $sql = $sql . " AND itemName LIKE  :itemName";
-                   $namedParameters[':itemName'] = "%" . $_GET['itemName'] . "%";
-                    }
-                    if(isset($_GET['inStore']))
-                     {
-                    $sql = $sql . " AND availability = :availability";
-                    $namedParameters[':availability'] = "inStore";
-                    }
-                
-                 if(isset($_GET['online']))
-                    {
-                    $sql = $sql . " AND availability = :availability";
-                    $namedParameters[':availability'] = "online";
-                    }
-                
-                if(isset($_GET['mens']))
-                    {
-                    $sql = $sql . " AND deptId = :deptId";
-                    $namedParameters[':deptId'] = "1";
-                    }
-                
-                 if(isset($_GET['womens']))
-                    {
-                    $sql = $sql . " AND deptId = :deptId";
-                    $namedParameters[':deptId'] = "2";
-                    }
-                
-                if(isset($_GET['kids']))
-                    {
-                    $sql = $sql . " AND deptId = :deptId";
-                    $namedParameters[':deptId'] = "3";
-                    }
-            }
-        
-             if(isset($_GET['sort']))
-                {
-                    $sortN = $_GET['sort'];
-                    
-                    
-                    if($sortN = 'pricehigh')
-                        {
-                        $sql= $sql . 'ORDER BY price DESC';
-                        }
-                }
-                    
-                     if(isset($_GET['sort1']))
-                    {
-                    $sortN1 = $_GET['sort1'];
-                    }
-                    
-                    if ($sortN1='item')
-                    {
-                        $sql=$sql . 'ORDER BY itemName';
-                    }
+           
          
     
     }
